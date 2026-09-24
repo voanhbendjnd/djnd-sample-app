@@ -57,6 +57,8 @@ dependencies {
 	implementation("org.ehcache:ehcache:3.10.8:jakarta")
 	// connect hibernate 6 with jcache
 	implementation("org.hibernate.orm:hibernate-jcache")
+	// Response follow format RFC7807
+	implementation("org.zalando:problem-spring-web-starter:0.29.1")
 }
 
 tasks.withType<Test> {
