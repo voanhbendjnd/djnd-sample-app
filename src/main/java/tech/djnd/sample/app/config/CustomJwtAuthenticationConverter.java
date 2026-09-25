@@ -1,7 +1,5 @@
 package tech.djnd.sample.app.config;
 
-import djnd.happy.farm.service.errors.SessionInvalidException;
-import djnd.happy.farm.service.SessionManager;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.core.convert.converter.Converter;
@@ -10,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
+import tech.djnd.sample.app.security.SessionManager;
 
 import java.util.Collection;
 import java.util.List;

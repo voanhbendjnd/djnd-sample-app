@@ -4,7 +4,7 @@ package tech.djnd.sample.app.web.rest.errors;
 import javax.annotation.Nullable;
 
 import org.springframework.beans.factory.annotation.Value;
-    import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -14,10 +14,10 @@ import org.zalando.problem.ProblemBuilder;
 import org.zalando.problem.spring.web.advice.ProblemHandling;
 import org.zalando.problem.spring.web.advice.security.SecurityAdviceTrait;
 import org.zalando.problem.violations.ConstraintViolationProblem;
+import tech.djnd.sample.app.service.errors.EmailAlreadyUsedException;
+import tech.djnd.sample.app.service.errors.SessionInvalidException;
 import tech.jhipster.web.util.HeaderUtil;
 
-import java.util.HashMap;
-import java.util.Map;
 
 @ControllerAdvice
 public class ExceptionTranslator implements ProblemHandling, SecurityAdviceTrait {
