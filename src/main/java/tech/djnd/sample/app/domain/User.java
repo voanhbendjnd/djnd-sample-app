@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +12,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import tech.djnd.sample.app.config.Constants;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -63,8 +61,7 @@ public class User extends AbstractAuditingEntity <Long> implements Serializable 
 
     @Column(name = "reset_date")
     private Instant resetDate = null;
-    @Column(name = "login_type")
-    private String loginType;
+
     @Column(name ="session_id")
     private String sessionId;
     @JsonIgnore

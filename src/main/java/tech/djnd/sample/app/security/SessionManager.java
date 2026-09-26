@@ -5,7 +5,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import tech.djnd.sample.app.repository.UserRepository;
+import tech.djnd.sample.app.service.errors.DataResourceNotFoundException;
 
+import java.util.Locale;
 import java.util.UUID;
 
 @Service
@@ -19,7 +21,11 @@ public class SessionManager {
         if(updated > 0){
             return newSessionId;
         }
-        throw new ResourceNotFoundException("Cannot init session ID!");
+        throw new DataResourceNotFoundException(String.format("User with ID %d not found!", userId), "userManagement", "idnotfound");
+    }
+    public boolean isValidSessionIdByEmail(String email, String sessionId){
+        String normalizedEmail = email.trim().toLowerCase(Locale.ENGLISH);
+        return userRepository.findOneWithAuthoritiesByEmail(normalizedEmail).map(existingUser -> existingUser.getSessionId().equals(sessionId)).orElse(false);
     }
 
 }

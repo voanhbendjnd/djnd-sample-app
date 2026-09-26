@@ -1,6 +1,5 @@
 package tech.djnd.sample.app.web.rest;
 
-import com.cloudinary.provisioning.Account;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

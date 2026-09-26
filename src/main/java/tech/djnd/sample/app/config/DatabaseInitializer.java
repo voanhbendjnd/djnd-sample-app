@@ -51,7 +51,7 @@ public class DatabaseInitializer implements CommandLineRunner {
             User admin = new User();
             admin.setName("VO ANH BEN");
             admin.setActivated(true);
-            admin.setEmail("benva.ce190709@gmail.com");
+            admin.setEmail("admin@gmail.com");
             admin.setPassword(passwordEncoder.encode("123123"));
             admin.setAuthorities(authorities);
             userRepository.save(admin);
